@@ -1,5 +1,7 @@
 package com.ao.frozens.net.download;
 
+import android.os.AsyncTask;
+
 import com.ao.frozens.net.RestCreator;
 import com.ao.frozens.net.callback.IError;
 import com.ao.frozens.net.callback.IFailure;
@@ -8,6 +10,7 @@ import com.ao.frozens.net.callback.ISuccess;
 
 import java.util.WeakHashMap;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -51,20 +54,38 @@ public class DownloadHandler {
 
     public final void handle() {
 
-        if (REQUSET != null){
+        if (REQUSET != null) {
             REQUSET.onRequsetStart();
         }
 
-        RestCreator.getRestService().download(URL,PARMAS)
-                .enqueue(new Callback<String>() {
+        RestCreator.getRestService().download(URL, PARMAS)
+                .enqueue(new Callback<ResponseBody>() {
                     @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
-                        final SaveFileTask saveFileTask = new SaveFileTask(REQUSET,SUCCESS);
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if (response.isSuccessful()) {
+                            final SaveFileTask saveFileTask = new SaveFileTask(REQUSET, SUCCESS);
+                            final ResponseBody body = response.body();
+                            saveFileTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,
+                                    DOWNLOAD_DIR, EXTENSION, body, NAME);
+
+                            if (saveFileTask.isCancelled()) {
+                                if (REQUSET != null) {
+                                    REQUSET.onRequsetEnd();
+                                }
+                            }
+                        } else {
+                            if (ERROR != null) {
+                                ERROR.onError(response.code(), response.message());
+                            }
+                        }
                     }
 
                     @Override
-                    public void onFailure(Call<String> call, Throwable t) {
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
 
+                        if (FAILURE != null) {
+                            FAILURE.onFailure();
+                        }
                     }
                 });
 

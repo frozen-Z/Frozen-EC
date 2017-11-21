@@ -3,7 +3,6 @@ package com.ao.frozen;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
-import android.widget.Toast;
 
 import com.ao.frozens.delegates.FrozenDelegate;
 import com.ao.frozens.net.RestClient;
@@ -38,7 +37,7 @@ public class ExampleDelegate extends FrozenDelegate {
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
-                        Toast.makeText(getContext(),response,Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getContext(),response,Toast.LENGTH_LONG).show();
                     }
                 })
                 .error(new IError() {

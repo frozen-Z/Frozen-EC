@@ -43,8 +43,9 @@ public class SaveFileTask extends AsyncTask<Object, Void, File> {
         String downloadDir = (String) objects[0];
         String extension = (String) objects[1];
         final ResponseBody responseBody = (ResponseBody) objects[2];
-        final InputStream inputStream = responseBody.byteStream();
         final String name = (String) objects[3];
+        final InputStream inputStream = responseBody.byteStream();
+
         if (downloadDir == null || downloadDir.equals("")) {
             downloadDir = "down_loads";
         }
