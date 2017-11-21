@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import com.ao.frozens.app.Frozen;
 import com.ao.frozens.net.callback.IRequest;
 import com.ao.frozens.net.callback.ISuccess;
-import com.ao.frozens.net.utils.FileUtils;
+import com.ao.frozens.utils.FileUtils;
 
 import java.io.File;
 import java.io.InputStream;

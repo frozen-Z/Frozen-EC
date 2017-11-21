@@ -7,9 +7,10 @@ package com.ao.frozens.app;
  * Created by Leo on 2017/11/21.
  */
 
-public enum ConfigTyoe {
+public enum ConfigType {
     API_HOST,
     APPLICATION_CONTEXT,
     CONFIG_REDAY,
-    ICON
+    ICON,
+    INTERCEPTOR
 }

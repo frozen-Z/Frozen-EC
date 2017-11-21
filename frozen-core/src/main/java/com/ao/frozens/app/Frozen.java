@@ -16,15 +16,22 @@ public final class Frozen {
 
 
     public static Configurator init(Context context){
-        getConfigurations().put(ConfigTyoe.APPLICATION_CONTEXT.name(),context.getApplicationContext());
+        getConfigurations().put(ConfigType.APPLICATION_CONTEXT.name(),context.getApplicationContext());
+        return Configurator.getInstance();
+    }
+    public static Configurator getConfigurator() {
         return Configurator.getInstance();
     }
 
-    public static HashMap<String, Object> getConfigurations(){
+    public static HashMap<Object, Object> getConfigurations(){
        return Configurator.getInstance().getFrozenConfigs();
     }
 
     public static Application getApplication(){
-        return (Application) getConfigurations().get(ConfigTyoe.APPLICATION_CONTEXT.name());
+        return (Application) getConfigurations().get(ConfigType.APPLICATION_CONTEXT.name());
+    }
+
+    public static <T> T getConfiguration(Object key) {
+        return getConfigurator().getConfiguration(key);
     }
 }

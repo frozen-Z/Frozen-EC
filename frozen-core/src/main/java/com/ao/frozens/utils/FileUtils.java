@@ -1,4 +1,4 @@
-package com.ao.frozens.net.utils;
+package com.ao.frozens.utils;
 
 import android.content.ContentResolver;
 import android.content.Context;

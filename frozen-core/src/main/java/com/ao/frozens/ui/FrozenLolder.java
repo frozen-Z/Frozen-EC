@@ -7,7 +7,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.ao.frozens.R;
-import com.ao.frozens.ui.util.DimenUtil;
+import com.ao.frozens.utils.DimenUtil;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;

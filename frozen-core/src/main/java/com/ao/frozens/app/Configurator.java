@@ -6,6 +6,8 @@ import com.joanzapata.iconify.Iconify;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import okhttp3.Interceptor;
+
 /**
  * com.ao.frozens.app
  * <p>
@@ -15,9 +17,11 @@ import java.util.HashMap;
 
 public class Configurator {
 
-    private static final HashMap<String ,Object> FROZEN_CONFIGS = new HashMap<>();
+    private static final HashMap<Object ,Object> FROZEN_CONFIGS = new HashMap<>();
 
     private static final ArrayList<IconFontDescriptor> ICONS = new ArrayList<>();
+
+    private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
 
     private void initIcons(){
         if (ICONS.size() > 0 ){
@@ -30,7 +34,7 @@ public class Configurator {
 
     private Configurator(){
         initIcons();
-        FROZEN_CONFIGS.put(ConfigTyoe.CONFIG_REDAY.name(),false);
+        FROZEN_CONFIGS.put(ConfigType.CONFIG_REDAY.name(),false);
     }
 
     private static class Holder{
@@ -41,22 +45,22 @@ public class Configurator {
         return Holder.INSTANCE;
     }
 
-    final HashMap<String ,Object> getFrozenConfigs(){
+    final HashMap<Object ,Object> getFrozenConfigs(){
         return FROZEN_CONFIGS;
     }
 
     public final void configure(){
-        FROZEN_CONFIGS.put(ConfigTyoe.CONFIG_REDAY.name(),true);
+        FROZEN_CONFIGS.put(ConfigType.CONFIG_REDAY.name(),true);
     }
 
     public final Configurator withApiHost(String host){
-        FROZEN_CONFIGS.put(ConfigTyoe.API_HOST.name(),host);
+        FROZEN_CONFIGS.put(ConfigType.API_HOST.name(),host);
         return this;
     }
 
     private void checkConfiguration(){
-        final boolean isRead = (boolean) FROZEN_CONFIGS.get(ConfigTyoe.CONFIG_REDAY.name());
-        if (!isRead){
+        final boolean isReady = (boolean) FROZEN_CONFIGS.get(ConfigType.CONFIG_REDAY.name());
+        if (!isReady){
             throw new  RuntimeException ("Configuration is not read,call configure");
         }
 
@@ -66,9 +70,21 @@ public class Configurator {
         return this;
     }
 
+    public final Configurator withInterceptor(Interceptor interceptor){
+        INTERCEPTORS.add(interceptor);
+        FROZEN_CONFIGS.put(ConfigType.INTERCEPTOR.name(),INTERCEPTORS);
+        return this;
+    }
+
+    public final Configurator withInterceptor(ArrayList<Interceptor> interceptors){
+        INTERCEPTORS.addAll(interceptors);
+        FROZEN_CONFIGS.put(ConfigType.INTERCEPTOR.name(),INTERCEPTORS);
+        return this;
+    }
+
     @SuppressWarnings("unchecked")
-    final <T> T getConfiguration(Enum<ConfigTyoe> key){
+    final <T> T getConfiguration(Object key){
         checkConfiguration();
-        return (T)FROZEN_CONFIGS.get(key.name());
+        return (T)FROZEN_CONFIGS.get(key);
     }
 }
