@@ -1,0 +1,1 @@
+include ':shoping', ':frozen-compiler', ':forzen-annotations', ':frozen-core', ':frozen-ec'
