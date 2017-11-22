@@ -1,4 +1,4 @@
-package com.ao.frozens.ui;
+package com.ao.frozens.ui.loader;
 
 /**
  * com.ao.frozens.ui

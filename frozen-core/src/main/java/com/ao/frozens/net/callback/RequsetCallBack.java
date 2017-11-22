@@ -2,8 +2,8 @@ package com.ao.frozens.net.callback;
 
 import android.os.Handler;
 
-import com.ao.frozens.ui.FrozenLolder;
-import com.ao.frozens.ui.LoaderStyle;
+import com.ao.frozens.ui.loader.FrozenLolder;
+import com.ao.frozens.ui.loader.LoaderStyle;
 
 import retrofit2.Call;
 import retrofit2.Callback;

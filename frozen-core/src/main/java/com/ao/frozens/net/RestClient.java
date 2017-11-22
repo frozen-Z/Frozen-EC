@@ -8,8 +8,8 @@ import com.ao.frozens.net.callback.IRequest;
 import com.ao.frozens.net.callback.ISuccess;
 import com.ao.frozens.net.callback.RequsetCallBack;
 import com.ao.frozens.net.download.DownloadHandler;
-import com.ao.frozens.ui.FrozenLolder;
-import com.ao.frozens.ui.LoaderStyle;
+import com.ao.frozens.ui.loader.FrozenLolder;
+import com.ao.frozens.ui.loader.LoaderStyle;
 
 import java.io.File;
 import java.util.WeakHashMap;

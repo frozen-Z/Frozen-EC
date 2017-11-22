@@ -6,7 +6,7 @@ import com.ao.frozens.net.callback.IError;
 import com.ao.frozens.net.callback.IFailure;
 import com.ao.frozens.net.callback.IRequest;
 import com.ao.frozens.net.callback.ISuccess;
-import com.ao.frozens.ui.LoaderStyle;
+import com.ao.frozens.ui.loader.LoaderStyle;
 
 import java.io.File;
 import java.util.WeakHashMap;
