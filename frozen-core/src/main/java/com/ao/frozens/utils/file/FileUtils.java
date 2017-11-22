@@ -1,4 +1,4 @@
-package com.ao.frozens.utils;
+package com.ao.frozens.utils.file;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -117,8 +117,8 @@ public class FileUtils {
      * 保存Bitmap到SD卡中
      *
      * @param dir      目录名,只需要写自己的相对目录名即可
-     * @param compress 压缩比例 100是不压缩,值约小压缩率越高
-     * @return 返回该文件
+     * @param compress 压缩比例 100是不压缩,值越小压缩率越高
+     * @return         返回该文件
      */
     public static File saveBitmap(Bitmap mBitmap, String dir, int compress) {
 

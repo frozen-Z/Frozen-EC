@@ -3,7 +3,7 @@ package com.ao.frozens.net.interceptors;
 import android.support.annotation.RawRes;
 import android.util.Log;
 
-import com.ao.frozens.utils.FileUtils;
+import com.ao.frozens.utils.file.FileUtils;
 
 import java.io.IOException;
 

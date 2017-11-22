@@ -1,4 +1,4 @@
-package com.ao.frozens.utils;
+package com.ao.frozens.utils.dimen;
 
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
