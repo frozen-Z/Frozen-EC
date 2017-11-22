@@ -6,7 +6,9 @@ import android.view.View;
 
 import com.ao.frozenec.R;
 import com.ao.frozens.delegates.FrozenDelegate;
+import com.ao.frozens.ui.launcher.Flags;
 import com.ao.frozens.ui.launcher.LauncherHolderCreator;
+import com.ao.frozens.utils.storage.FrozenPreference;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 
@@ -53,5 +55,11 @@ public class LauncherScrollDelegate extends FrozenDelegate implements OnItemClic
     @Override
     public void onItemClick(int position) {
 
+        if (position == INTEGERS.size() - 1) {
+            FrozenPreference.setAppFlag(Flags.HAS_FIRST_LAUNCH_APP.name(), true);
+            // TODO: 2017/11/22
+        }
+
     }
+
 }

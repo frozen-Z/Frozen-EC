@@ -10,6 +10,8 @@ import com.ao.frozenec.R2;
 import com.ao.frozens.delegates.FrozenDelegate;
 import com.ao.frozens.timer.BaseTimerTask;
 import com.ao.frozens.timer.ITimerListener;
+import com.ao.frozens.ui.launcher.Flags;
+import com.ao.frozens.utils.storage.FrozenPreference;
 
 import java.text.MessageFormat;
 import java.util.Timer;
@@ -24,23 +26,36 @@ import butterknife.OnClick;
  * Created by Leo on 2017/11/22.
  */
 
-public class LauncherDelegate extends FrozenDelegate implements ITimerListener{
+public class LauncherDelegate extends FrozenDelegate implements ITimerListener {
+
+    private Timer mTimer;
+    private int mCount = 5;
 
     @BindView(R2.id.tv_launchaer_timer)
     TextView mTimerView;
 
     @OnClick(R2.id.tv_launchaer_timer)
-    public void onClickTimerView(){
-
+    public void onClickTimerView() {
+        if (mTimer != null) {
+            mTimer.cancel();
+            mTimer = null;
+            checkShowScroll();
+        }
     }
 
-    private Timer mTimer;
-    private int mCount = 5;
-
-    private void initTimer(){
+    private void initTimer() {
         mTimer = new Timer();
         final BaseTimerTask timerTask = new BaseTimerTask(this);
-        mTimer.schedule(timerTask,0,1000);
+        mTimer.schedule(timerTask, 0, 1000);
+    }
+
+    private void checkShowScroll() {
+
+        if (!FrozenPreference.getAppFlag(Flags.HAS_FIRST_LAUNCH_APP.name())){
+            start(new LauncherScrollDelegate(),SINGLETASK);
+        }else {
+        // TODO: 2017/11/22
+        }
     }
 
     @Override
@@ -58,13 +73,14 @@ public class LauncherDelegate extends FrozenDelegate implements ITimerListener{
         getProxyActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                if (mTimer != null){
-                    mTimerView.setText(MessageFormat.format("跳过\n{0}s",mCount));
+                if (mTimer != null) {
+                    mTimerView.setText(MessageFormat.format("跳过\n{0}s", mCount));
                     mCount--;
-                    if (mCount <0){
-                        if (mTimer != null){
+                    if (mCount < 0) {
+                        if (mTimer != null) {
                             mTimer.cancel();
                             mTimer = null;
+                            checkShowScroll();
                         }
                     }
                 }

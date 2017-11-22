@@ -24,10 +24,10 @@ public class Configurator {
     private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
 
     private void initIcons(){
-        if (ICONS.size() > 0 ){
-            Iconify.IconifyInitializer iconifyInitializer = Iconify.with(ICONS.get(0));
-            for (int i = 1 ; i < ICONS.size() ;i ++){
-                iconifyInitializer.with(ICONS.get(i));
+        if (ICONS.size() > 0) {
+            final Iconify.IconifyInitializer initializer = Iconify.with(ICONS.get(0));
+            for (int i = 1; i < ICONS.size(); i++) {
+                initializer.with(ICONS.get(i));
             }
         }
     }
