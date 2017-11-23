@@ -20,8 +20,7 @@ import butterknife.OnClick;
 
 /**
  * com.ao.frozenec.sign
- * <p>
- * <p>
+ * <p>注册页面
  * Created by Leo on 2017/11/22.
  */
 

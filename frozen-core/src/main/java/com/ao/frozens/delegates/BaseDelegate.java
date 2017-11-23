@@ -14,8 +14,7 @@ import me.yokeyword.fragmentation_swipeback.SwipeBackFragment;
 
 /**
  * com.ao.frozens.delegates
- * <p>
- * <p>
+ * <p>基础页面
  * Created by Leo on 2017/11/21.
  */
 

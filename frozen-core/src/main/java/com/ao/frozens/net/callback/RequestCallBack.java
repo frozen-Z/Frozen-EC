@@ -11,12 +11,11 @@ import retrofit2.Response;
 
 /**
  * com.ao.frozens.net.callback
- * <p>
- * <p>
+ * <p>对retrofit网络请求接口 的封装
  * Created by Leo on 2017/11/21.
  */
 
-public class RequsetCallBack implements Callback<String> {
+public class RequestCallBack implements Callback<String> {
 
     private final IRequest REQUSET;
     private final IFailure FAILURE;
@@ -25,7 +24,7 @@ public class RequsetCallBack implements Callback<String> {
     private final LoaderStyle LOADER_STYLE;
     private static Handler HANDLER = new Handler();
 
-    public RequsetCallBack(IRequest request, IFailure failure, ISuccess success, IError error,LoaderStyle loaderStyle) {
+    public RequestCallBack(IRequest request, IFailure failure, ISuccess success, IError error, LoaderStyle loaderStyle) {
 
         this.REQUSET = request;
         this.FAILURE = failure;

@@ -26,8 +26,7 @@ import butterknife.OnClick;
 
 /**
  * com.ao.frozenec.lancher
- * <p>
- * <p>
+ * <p>启动（倒计时）页面
  * Created by Leo on 2017/11/22.
  */
 

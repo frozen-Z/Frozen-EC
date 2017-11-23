@@ -2,8 +2,7 @@ package com.ao.frozens.delegates;
 
 /**
  * com.ao.frozens.delegates
- * <p>
- * <p>
+ * <p>处理权限页面
  * Created by Leo on 2017/11/21.
  */
 

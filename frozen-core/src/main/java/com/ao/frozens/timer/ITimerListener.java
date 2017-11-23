@@ -2,8 +2,7 @@ package com.ao.frozens.timer;
 
 /**
  * com.ao.frozens.timer
- * <p>
- * <p>
+ * <p>计时器回调
  * Created by Leo on 2017/11/22.
  */
 

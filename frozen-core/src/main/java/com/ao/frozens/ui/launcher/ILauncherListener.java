@@ -2,8 +2,7 @@ package com.ao.frozens.ui.launcher;
 
 /**
  * com.ao.frozens.ui.launcher
- * <p>
- * <p>
+ * <p>启动页面结束回调接口
  * Created by Leo on 2017/11/23.
  */
 

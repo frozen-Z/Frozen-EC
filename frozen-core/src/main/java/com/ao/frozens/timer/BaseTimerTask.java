@@ -4,8 +4,7 @@ import java.util.TimerTask;
 
 /**
  * com.ao.frozens.timer
- * <p>
- * <p>
+ * <p>计时器
  * Created by Leo on 2017/11/22.
  */
 

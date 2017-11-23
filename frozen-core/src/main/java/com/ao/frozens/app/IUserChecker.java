@@ -2,8 +2,7 @@ package com.ao.frozens.app;
 
 /**
  * com.ao.frozens.app
- * <p>
- * <p>
+ * <p>判断用户是否登录回调接口
  * Created by Leo on 2017/11/23.
  */
 

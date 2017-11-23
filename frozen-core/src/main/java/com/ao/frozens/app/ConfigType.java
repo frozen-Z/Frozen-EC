@@ -2,8 +2,7 @@ package com.ao.frozens.app;
 
 /**
  * com.ao.frozens.app
- * <p>
- * <p>
+ * <p>项目配置类型枚举
  * Created by Leo on 2017/11/21.
  */
 

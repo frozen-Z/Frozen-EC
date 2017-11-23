@@ -14,8 +14,7 @@ import com.ao.frozens.net.callback.ISuccess;
 
 /**
  * com.ao.frozen
- * <p>
- * <p>
+ * <p>网络框架测试
  * Created by Leo on 2017/11/21.
  */
 
@@ -58,7 +57,6 @@ public class ExampleDelegate extends FrozenDelegate {
                     public void onRequsetStart() {
 
                     }
-
                     @Override
                     public void onRequsetEnd() {
 

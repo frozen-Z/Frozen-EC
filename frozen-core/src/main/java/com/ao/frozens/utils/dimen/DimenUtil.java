@@ -7,8 +7,7 @@ import com.ao.frozens.app.Frozen;
 
 /**
  * com.ao.frozens.ui.util
- * <p>
- * <p>
+ * <p>测量工具类
  * Created by Leo on 2017/11/21.
  */
 

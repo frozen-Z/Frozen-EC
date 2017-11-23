@@ -6,7 +6,7 @@ import com.ao.frozens.net.callback.IError;
 import com.ao.frozens.net.callback.IFailure;
 import com.ao.frozens.net.callback.IRequest;
 import com.ao.frozens.net.callback.ISuccess;
-import com.ao.frozens.net.callback.RequsetCallBack;
+import com.ao.frozens.net.callback.RequestCallBack;
 import com.ao.frozens.net.download.DownloadHandler;
 import com.ao.frozens.ui.loader.FrozenLolder;
 import com.ao.frozens.ui.loader.LoaderStyle;
@@ -22,8 +22,7 @@ import retrofit2.Callback;
 
 /**
  * com.ao.frozens.net
- * <p>
- * <p>
+ * <p>网络请求器
  * Created by Leo on 2017/11/21.
  */
 
@@ -116,7 +115,7 @@ public class RestClient {
     }
 
     private Callback<String> getRequestCallBack() {
-        return new RequsetCallBack(REQUSET, FAILURE, SUCCESS, ERROR, LOADER_STYLE);
+        return new RequestCallBack(REQUSET, FAILURE, SUCCESS, ERROR, LOADER_STYLE);
     }
 
     public final void get() {

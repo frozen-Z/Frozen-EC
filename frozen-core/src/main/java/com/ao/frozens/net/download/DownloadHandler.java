@@ -17,8 +17,7 @@ import retrofit2.Response;
 
 /**
  * com.ao.frozens.net.download
- * <p>
- * <p>
+ * <p>下载处理类
  * Created by Leo on 2017/11/21.
  */
 

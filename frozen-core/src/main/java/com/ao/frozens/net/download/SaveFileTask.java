@@ -16,8 +16,7 @@ import okhttp3.ResponseBody;
 
 /**
  * com.ao.frozens.net.download
- * <p>
- * <p>
+ * <p>异步下载类
  * Created by Leo on 2017/11/21.
  */
 

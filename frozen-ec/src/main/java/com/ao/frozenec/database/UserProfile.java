@@ -6,8 +6,7 @@ import org.greenrobot.greendao.annotation.Generated;
 
 /**
  * com.ao.frozenec.database
- * <p>
- * <p>
+ * <p>利用GreenDao生成的用户信息类
  * Created by Leo on 2017/11/23.
  */
 @Entity(nameInDb = "user_profile")

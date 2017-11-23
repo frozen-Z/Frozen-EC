@@ -2,8 +2,7 @@ package com.ao.frozens.ui.launcher;
 
 /**
  * com.ao.frozens.ui.launcher
- * <p>
- * <p>
+ * <p>启动状态枚举
  * Created by Leo on 2017/11/22.
  */
 

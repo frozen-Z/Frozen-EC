@@ -4,8 +4,7 @@ import com.ao.frozens.utils.storage.FrozenPreference;
 
 /**
  * com.ao.frozens.app
- * <p>
- * <p>
+ * <p>用户信息管理类
  * Created by Leo on 2017/11/23.
  */
 

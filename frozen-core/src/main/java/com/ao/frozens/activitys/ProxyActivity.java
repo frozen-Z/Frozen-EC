@@ -11,8 +11,7 @@ import me.yokeyword.fragmentation.SupportActivity;
 
 /**
  * com.ao.frozens.activitys
- * <p>
- * <p>
+ * <p>容器Activity （单Activity项目）
  * Created by Leo on 2017/11/21.
  */
 

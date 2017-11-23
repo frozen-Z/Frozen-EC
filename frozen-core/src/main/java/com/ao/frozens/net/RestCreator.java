@@ -14,8 +14,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
  * com.ao.frozens.net
- * <p>
- * <p>
+ * <p>网络请求器制造类
  * Created by Leo on 2017/11/21.
  */
 

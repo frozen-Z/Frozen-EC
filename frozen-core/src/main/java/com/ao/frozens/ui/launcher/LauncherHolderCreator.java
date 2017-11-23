@@ -4,8 +4,7 @@ import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 
 /**
  * com.ao.frozens.ui.launcher
- * <p>
- * <p>
+ * <p>启动页面轮播图第三方辅助类
  * Created by Leo on 2017/11/22.
  */
 

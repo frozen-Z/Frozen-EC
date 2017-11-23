@@ -10,8 +10,7 @@ import okhttp3.Interceptor;
 
 /**
  * com.ao.frozens.app
- * <p>
- * <p>
+ * <p>项目配置器
  * Created by Leo on 2017/11/21.
  */
 

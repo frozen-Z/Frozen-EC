@@ -21,8 +21,7 @@ import java.util.ArrayList;
 
 /**
  * com.ao.frozenec.launcher
- * <p>
- * <p>
+ * <p>启动（轮播图）页面
  * Created by Leo on 2017/11/22.
  */
 

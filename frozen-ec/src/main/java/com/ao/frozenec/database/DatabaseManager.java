@@ -6,8 +6,8 @@ import org.greenrobot.greendao.database.Database;
 
 /**
  * com.ao.frozenec.database
- * <p>
- * <p>
+ * <p>数据库管理类
+ * <p>做一些初始化工作 构造一个DAO
  * Created by Leo on 2017/11/23.
  */
 

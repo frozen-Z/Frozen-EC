@@ -10,8 +10,7 @@ import com.ao.frozens.app.Frozen;
 
 /**
  * com.ao.frozens.utils.storage
- * <p>
- * <p>
+ * <p>SharedPreferences 工具类
  * Created by Leo on 2017/11/22.
  */
 public class FrozenPreference {

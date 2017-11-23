@@ -4,8 +4,7 @@ import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 /**
  * com.ao.frozens.utils.log
- * <p>
- * <p>
+ * <p>log相关工具类
  * Created by Leo on 2017/11/23.
  */
 

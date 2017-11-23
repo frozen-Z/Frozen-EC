@@ -9,8 +9,7 @@ import okhttp3.Request;
 
 /**
  * com.ao.frozens.net.interceptors
- * <p>
- * <p>
+ * <p>基础拦截器
  * Created by Leo on 2017/11/22.
  */
 

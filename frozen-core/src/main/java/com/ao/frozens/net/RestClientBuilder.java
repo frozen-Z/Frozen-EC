@@ -16,8 +16,7 @@ import okhttp3.RequestBody;
 
 /**
  * com.ao.frozens.net
- * <p>
- * <p>
+ * <p>网络请求器生成类
  * Created by Leo on 2017/11/21.
  */
 

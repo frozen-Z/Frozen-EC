@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import com.ao.frozenec.launcher.LauncherDelegate;
 import com.ao.frozenec.sign.ISignListener;
+import com.ao.frozenec.sign.SignInDelegate;
 import com.ao.frozens.activitys.ProxyActivity;
 import com.ao.frozens.delegates.FrozenDelegate;
 import com.ao.frozens.ui.launcher.ILauncherListener;
@@ -44,8 +45,10 @@ public class ExampleActivity extends ProxyActivity implements ISignListener , IL
     public void onLanuncherFinish(OnLauncherFinishTag tag) {
         switch (tag){
             case SIGNED:
+                startWithPop(new ExampleDelegate());
                 break;
             case NOT_SIGNED:
+                startWithPop(new SignInDelegate());
                 break;
             default:
                 break;

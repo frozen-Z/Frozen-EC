@@ -4,8 +4,7 @@ import android.content.Context;
 
 /**
  * com.ao.frozenec.database
- * <p>
- * <p>
+ * <p>辅助类
  * Created by Leo on 2017/11/23.
  */
 

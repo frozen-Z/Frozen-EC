@@ -2,8 +2,7 @@ package com.ao.frozens.net.callback;
 
 /**
  * com.ao.frozens.net.callback
- * <p>
- * <p>
+ * <p>网络请求错误回调
  * Created by Leo on 2017/11/21.
  */
 

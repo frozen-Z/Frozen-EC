@@ -21,8 +21,7 @@ import retrofit2.http.Url;
 
 /**
  * com.ao.frozens.net
- * <p>
- * <p>
+ * <p>网络请求器服务清单接口
  * Created by Leo on 2017/11/21.
  */
 
