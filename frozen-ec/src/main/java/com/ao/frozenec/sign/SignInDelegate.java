@@ -1,5 +1,6 @@
 package com.ao.frozenec.sign;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
@@ -10,6 +11,9 @@ import android.widget.Toast;
 import com.ao.frozenec.R;
 import com.ao.frozenec.R2;
 import com.ao.frozens.delegates.FrozenDelegate;
+import com.ao.frozens.net.RestClient;
+import com.ao.frozens.net.callback.ISuccess;
+import com.ao.frozens.utils.log.FrozenLogger;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -31,14 +35,39 @@ public class SignInDelegate extends FrozenDelegate {
     TextInputEditText mPassword;
 
     @OnClick(R2.id.tv_link_sign_up)
-    public void onClickLink(){
+    public void onClickLink() {
         start(new SignUpDelegate());
+    }
+
+    private ISignListener mISignListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof ISignListener) {
+            mISignListener = (ISignListener) activity;
+        }
     }
 
     @OnClick(R2.id.btn_sign_in)
     public void onClickSignIn() {
         if (checkForm()) {
             Toast.makeText(getContext(), "验证通过", Toast.LENGTH_SHORT).show();
+            RestClient.builder()
+                    .url("http://192.168.77.101:8080/RestServer/data/user_profile.json")
+                    .parmas("email", mEmail.getText().toString())
+                    .parmas("password", mPassword.getText().toString())
+                    .success(new ISuccess() {
+                        @Override
+                        public void onSuccess(String response) {
+                            Toast.makeText(getContext(), "登陆成功", Toast.LENGTH_SHORT).show();
+                            FrozenLogger.json("USER_PROFILE", response);
+                            SignHandler.onSignIn(response, mISignListener);
+                        }
+                    })
+                    .build()
+                    .post();
+
         }
     }
 

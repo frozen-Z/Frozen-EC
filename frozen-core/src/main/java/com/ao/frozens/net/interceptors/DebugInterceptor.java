@@ -1,7 +1,6 @@
 package com.ao.frozens.net.interceptors;
 
 import android.support.annotation.RawRes;
-import android.util.Log;
 
 import com.ao.frozens.utils.file.FileUtils;
 
@@ -51,7 +50,6 @@ public class DebugInterceptor extends BaseInterceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         final String url = chain.request().url().toString();
-        Log.e("--main--", "DebugInterceptor 类的 intercept 方法 调用");
         if (url.contains(DEBUG_URL)){
 
             return dubugResponse(chain,DEBUG_RAW_ID);

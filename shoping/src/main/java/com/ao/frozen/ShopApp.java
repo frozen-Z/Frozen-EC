@@ -2,6 +2,7 @@ package com.ao.frozen;
 
 import android.app.Application;
 
+import com.ao.frozenec.database.DatabaseManager;
 import com.ao.frozens.app.Frozen;
 import com.ao.frozens.net.interceptors.DebugInterceptor;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
@@ -22,5 +23,7 @@ public class ShopApp extends Application {
                 .withIcon(new FontAwesomeModule())
                 .withInterceptor(new DebugInterceptor("index",R.raw.test))
                 .configure();
+
+        DatabaseManager.getInstance().init(this);
     }
 }

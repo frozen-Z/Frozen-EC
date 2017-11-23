@@ -32,7 +32,6 @@ public class RestCreator {
     private static final class RestServiceHoledr {
         private static final RestService REST_SERVICE =
                 RetrofitHolder.RETROFIT_CLIENT.create(RestService.class);
-
     }
 
     public static RestService getRestService() {
@@ -63,7 +62,6 @@ public class RestCreator {
             if (INTERCEPTORS != null && !INTERCEPTORS.isEmpty()) {
                 for (Interceptor interceptor : INTERCEPTORS) {
                     BUILDER.addInterceptor(interceptor);
-
                 }
             }
             return BUILDER;

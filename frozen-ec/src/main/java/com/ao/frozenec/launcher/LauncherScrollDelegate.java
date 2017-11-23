@@ -1,13 +1,18 @@
 package com.ao.frozenec.launcher;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.ao.frozenec.R;
+import com.ao.frozens.app.AccountManager;
+import com.ao.frozens.app.IUserChecker;
 import com.ao.frozens.delegates.FrozenDelegate;
 import com.ao.frozens.ui.launcher.Flags;
+import com.ao.frozens.ui.launcher.ILauncherListener;
 import com.ao.frozens.ui.launcher.LauncherHolderCreator;
+import com.ao.frozens.ui.launcher.OnLauncherFinishTag;
 import com.ao.frozens.utils.storage.FrozenPreference;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
@@ -41,6 +46,17 @@ public class LauncherScrollDelegate extends FrozenDelegate implements OnItemClic
 
     }
 
+    private ILauncherListener mILauncherListener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof ILauncherListener) {
+
+            mILauncherListener = (ILauncherListener) activity;
+        }
+    }
+
     @Override
     public Object setLayout() {
         mConvenientBanner = new ConvenientBanner<Integer>(getContext());
@@ -57,9 +73,19 @@ public class LauncherScrollDelegate extends FrozenDelegate implements OnItemClic
 
         if (position == INTEGERS.size() - 1) {
             FrozenPreference.setAppFlag(Flags.HAS_FIRST_LAUNCH_APP.name(), true);
-            // TODO: 2017/11/22
-        }
+            AccountManager.checkAccount(new IUserChecker() {
+                @Override
+                public void onSignIn() {
+                    mILauncherListener.onLanuncherFinish(OnLauncherFinishTag.SIGNED);
+                }
 
+                @Override
+                public void notSignIn() {
+                    mILauncherListener.onLanuncherFinish(OnLauncherFinishTag.NOT_SIGNED);
+                }
+            });
+
+        }
     }
 
 }

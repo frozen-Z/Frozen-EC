@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
+
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
@@ -57,6 +58,11 @@ dependencies {
     compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
 
     compile 'com.alibaba:fastjson:1.2.31'
+
+    compile 'org.greenrobot:greendao-generator:3.2.2'
+    compile 'org.greenrobot:greendao:3.2.2'
+
+    compile 'com.orhanobut:logger:2.1.1'
 
     testCompile 'junit:junit:4.12'
     compile project(':forzen-annotations')
